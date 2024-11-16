@@ -1,0 +1,163 @@
+/* Основные стили для всего сайта */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Задаем высоту для всей страницы */
+    font-family: Arial, sans-serif;
+    background-color: #CAFDBF; /* Светло-светло-зеленый цвет для основного фона */
+    color: #333;
+}
+
+/* Контейнер, который оборачивает все элементы */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Контейнер занимает всю высоту страницы */
+}
+
+header {
+    background: #013220;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 0px; /* Отступ между заголовком и навигацией */
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Навигационное меню */
+nav {
+    margin-top: 10px; /* Дополнительный отступ для навигационного меню */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px;
+    margin: 0 5px; /* Отступ между ссылками */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Основной контент */
+main {
+    flex: 1; /* Основное содержимое занимает оставшееся пространство */
+    padding: 20px;
+}
+
+/* Стили для списка песен с динамическими колонками */
+ul {
+    list-style-type: none;
+    padding: 0;
+    column-width: 250px; /* Минимальная ширина колонки */
+    column-gap: 20px; /* Расстояние между колонками */
+}
+
+li {
+    margin: 10px 0;
+    break-inside: avoid; /* Предотвращает разрыв элемента внутри колонки */
+}
+
+/* Подвал */
+footer {
+    background: #013220;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Адаптация для узких экранов */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    ul {
+        column-width: 100%; /* Возвращаем список в одну колонку на маленьких экранах */
+    }
+}
+
+.large-text {
+    font-size: 1.5em; /* Увеличивает размер текста */
+}
+
+/* Стили для кнопок */
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #013220;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 250px; /* Фиксированная ширина для всех кнопок */
+    box-sizing: border-box; /* Учитывает внутренние отступы и границы в ширину и высоту */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Цвет при наведении */
+}
+
+.download-button {
+    text-align: center;
+    margin-top: 20px;
+    padding: 8px 16px; /* Меньшие отступы */
+    font-size: 0.8em; /* Уменьшенный размер шрифта */
+}
+
+/* Стили для блока с изображением и текстом */
+.content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; /* Одинаковое пространство между картинкой и текстом */
+    flex-wrap: wrap; /* Позволяет тексту переноситься ниже, если ширины недостаточно */
+}
+
+.image {
+    width: 200px;
+    height: auto;
+    flex-shrink: 0; /* Не даем картинке сжиматься */
+}
+
+.text-block {
+    text-align: left;
+    flex-grow: 1; /* Позволяет текстовому блоку занимать всё оставшееся пространство */
+    margin-left: 20px; /* Отступ между изображением и текстом */
+}
+
+/* Адаптивный стиль для мобильных устройств */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image {
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 300px; /* Максимальная ширина изображения на мобильных */
+    }
+
+    .text-block {
+        text-align: left; /* Центрирование текста на мобильных устройствах */
+        margin-left: 0; /* Убираем отступ слева на мобильных */
+    }
+}
+
+.single-column {
+    column-count: 1; /* Количество столбцов — один */
+    column-gap: 0; /* Нет промежутков между столбцами */
+}

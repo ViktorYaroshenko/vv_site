@@ -1,0 +1,26 @@
+<!-- songs/song_detail.html -->
+{% extends "base_generic.html" %}
+
+{% block title %}{{ song.title }}{% endblock %}
+
+{% block content %}
+<h2 style="text-align: center;">{{ song.title }}</h2>
+{% if song.audio_file %}
+    <audio controls>
+        <source src="{{ song.audio_file.url }}" type="audio/mpeg">
+        Ваш браузер не поддерживает элемент audio.
+    </audio>
+{% endif %}
+<p>{{ song.lyrics|linebreaksbr }}</p>
+<div style="margin-top: 20px;">
+        {% if category == 'poem' %}
+            <a href="{% url 'poems_list' %}" class="button">Назад к списку стихотворений</a>
+        {% elif category == 'song' %}
+            <a href="{% url 'songs_list' %}" class="button">Назад к списку песен</a>
+        {% elif category == 'story' %}
+            <a href="{% url 'stories_list' %}" class="button">Назад к списку рассказов</a>
+        {% else %}
+            <a href="{% url 'works_list' %}" class="button">Назад к списку произведений</a>
+        {% endif %}
+    </div>
+{% endblock %}

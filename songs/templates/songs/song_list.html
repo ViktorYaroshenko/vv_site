@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Список произведений</h1>
+  <ul>
+    {% for song in songs %}
+      <li>
+        <a href="{% url 'song_detail' song.id %}">{{ song.title }}</a> 
+
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

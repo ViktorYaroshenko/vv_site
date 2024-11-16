@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Произведения{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">Произведения</h1>
+<div style="text-align: center;">
+    <a href="{% url 'poems_list' %}" class="button">Стихотворения</a>
+    <a href="{% url 'songs_list' %}" class="button">Песни</a>
+    <a href="{% url 'stories_list' %}" class="button">Рассказы</a>
+</div>
+<div class="download-button">
+    <a href="https://disk.yandex.ru/d/OKLsNesS5g70sA" class="button">Скачать архив</a>
+</div>
+{% endblock %}
