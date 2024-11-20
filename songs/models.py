@@ -1,5 +1,5 @@
 from django.db import models
-
+#комментарий для проверки
 class Song(models.Model):
     CATEGORY_CHOICES = [
         ('poem', 'Стихотворение'),
